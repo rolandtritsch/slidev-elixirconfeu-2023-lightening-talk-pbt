@@ -115,7 +115,7 @@ ElixirConfEU 2023 - Lisbon/Portugal
 
 Good morning/Ola.
 
-Welcome to my lighten talk on Property-Based Testing with Elixir.
+Welcome to the lightening talk on Property-Based Testing with Elixir.
 
 -->
 
@@ -134,13 +134,15 @@ image: /images/focus.png
   * The slot they got from NBC was 4:30 mins
   * They did not shorten the song
   * They **just** played it faster. Much **faster** ...
-  * The performance was **en-lightening**
+  * And the performance was **en-lightening**
+* And no: This is not a picture of me, when I was younger :) ...
+* Let's go ...
 
 [Focus]: https://www.youtube.com/watch?v=ill06Ekj6QI
 
 <!--
 
-Property-based testing ...
+Lightening talks can be ...
 
 -->
 
@@ -150,12 +152,11 @@ Property-based testing ...
 
 * Testing: `input -> function -> output`
   * 3 tests: valid, invalid, edge-case
-  * Good code coverage
-* In 80% of the cases unit-testing will give you 80% of the value and
-  that should be good enough!
-* But in some cases you can test …
-  * `all(valid(input)) -> function -> output`
-  * `all(invalid(input)) -> function -> output`
+  * Goal: good code coverage
+* In 80% of the cases, **unit-testing** will give you 80% of the value
+  and that should be good enough!
+* But in some cases you can test ...
+  * `all(valid(input)) -> function -> check(property(output))`
   * ... and check that the output is correct
   * ... and find/test the edge-cases 
 * These tests are very **valuable** and **low-maintenance**
@@ -163,7 +164,7 @@ Property-based testing ...
 
 <!--
 
-Property-based testing ...
+Normally/In general we test ...
 
 -->
 
@@ -171,17 +172,17 @@ Property-based testing ...
 
 # Definition, History, Concepts, ...
 
-* `generate(input) -> property -> check(output)`
-* Property-based testing is "The thing that `QuickCheck` does" :)
-  * Haskell, 1999, John Hughes 
+* `all(valid(input)) -> function -> check(property(output))`
+* Property-based testing is "The thing that **QuickCheck** does" :)
+  * **Haskell**, 1999, John Hughes 
 * Other implementations ...
   * Scala, Clojure, Rust, Go, ...
 * Elixir ...
-  * PropCheck/PropEr, StreamData, ...
+  * PropCheck/PropEr, **StreamData**, ...
 * Two main concepts ...
-  * Generators - Generating Data
-  * Properties - Checking Properties
-* Shrinking - If a test fails, find the `smallest` possible
+  * **Generators** - Generating Data
+  * **Properties** - Checking Properties
+* **Shrinking** - If a test fails, find the `smallest` possible
   combination of input values that make the test fail
 
 <!--
@@ -213,7 +214,7 @@ image: /images/pascal.gif
 
 * Introduction
   * Every row is the sum of the two elements above
-  * Creates a triangular array of the binomial coefficients 
+  * Creates a **triangular array** of the **binomial coefficients** 
 * Properties
   * Every row has one element more than the previous row
   * Every row is a palindrome
@@ -271,13 +272,35 @@ image: /images/book.jpg
 
 # Main/Key Takeaways ...
 
-* Do not `force` using PBT. It (only) works (well) for a subset of
+* Do **not** force using PBT. It (only) works (well) for a subset of
   problem-domains (e.g. math problems, pure functions, ...)
-* Do not look at it as an alternative for your tradional unit-testing,
-  but more as a way to make your unit-testing more comprehensive, more
-  complete and easier to maintain
-* Buy the book ...
-* Attend the training ...
+* Do **not** look at it as an alternative for your tradional
+  unit-testing, but more as a way to **complement** your unit-testing to
+  make it more comprehensive, more complete and easier to maintain
+* Buy the book :) ...
+* Attend the training :) ...
+
+<!--
+
+Notes ...
+
+-->
+
+---
+layout: image-right
+image: /images/palindrome.png
+---
+
+# Main/Key Takeaways ...
+
+* Do **not** force using PBT. It (only) works (well) for a subset of
+  problem-domains (e.g. math problems, pure functions, ...)
+* Do **not** look at it as an alternative for your tradional
+  unit-testing, but more as a way to **complement** your unit-testing to
+  make it more comprehensive, more complete and easier to maintain
+* Buy the book :) ...
+* Attend the training :) ...
+* Sleep well tonight !!!
 
 <!--
 
