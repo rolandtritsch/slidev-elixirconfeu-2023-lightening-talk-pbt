@@ -196,6 +196,8 @@ layout: section
 
 # Example
 
+## Pascal's Triangle
+
 <!--
 
 Property-based testing ...
@@ -237,7 +239,7 @@ image: /images/palindrome.png
   * Creates a triangular array of the binomial coefficients 
 * Properties
   * Every row has one element more than the previous row
-  * Every row is a palindrome
+  * Every row is a **palindrome**
   * The sum of all elements in a given row is double the sum of all
     elements in the previous row
   * More ...
@@ -252,7 +254,9 @@ Property-based testing ...
 layout: section
 ---
 
-# Example - Live Coding ?!?!
+# Example
+
+## !!! (60 sec) Live Coding !!!
 
 <!--
 
@@ -262,16 +266,16 @@ Property-based testing ...
 
 ---
 layout: image-right
-image: /images/book.png
+image: /images/book.jpg
 ---
 
 # Main/Key Takeaways ...
 
-* Do not “force” using PBT. It (only) works (well) for a subset of
+* Do not `force` using PBT. It (only) works (well) for a subset of
   problem-domains (e.g. math problems, pure functions, ...)
-* Do not look at it as an alternative, but more as a way to make your
-  unit-testing more comprehensive, more complete and easier to
-  maintain
+* Do not look at it as an alternative for your tradional unit-testing,
+  but more as a way to make your unit-testing more comprehensive, more
+  complete and easier to maintain
 * Buy the book ...
 * Attend the training ...
 
