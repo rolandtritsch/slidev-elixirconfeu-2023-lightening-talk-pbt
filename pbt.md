@@ -93,10 +93,12 @@ drawings:
   presenterOnly: false
   syncAll: true
 ---
+
 ---
 layout: image
 image: /backgrounds/opening.jpg
 ---
+
 ---
 layout: intro
 ---
@@ -307,6 +309,11 @@ image: /images/palindrome.png
 Notes ...
 
 -->
+
+---
+layout: image
+image: /backgrounds/opening.jpg
+---
 
 ---
 layout: section
