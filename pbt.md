@@ -445,7 +445,6 @@ image: /images/book.jpg
   unit-testing, but more as a way to **complement** your unit-testing to
   make it more comprehensive, more complete and easier to maintain
 * Buy the book :) ...
-* Attend the training :) ...
 
 <!--
 
@@ -466,7 +465,6 @@ image: /images/palindrome.png
   unit-testing, but more as a way to **complement** your unit-testing to
   make it more comprehensive, more complete and easier to maintain
 * Buy the book :) ...
-* Attend the training :) ...
 * Sleep well tonight !!!
 
 <!--
