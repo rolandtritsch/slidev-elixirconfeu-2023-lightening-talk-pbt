@@ -122,6 +122,17 @@ Welcome to the lightening talk on Property-Based Testing with Elixir.
 -->
 
 ---
+layout: statement
+---
+
+# Community
+
+---
+layout: image
+image: 'https://live.staticflickr.com/65535/49768700213_0c23e49354_z.jpg'
+---
+
+---
 layout: image-right
 image: /images/focus.png
 ---
@@ -264,6 +275,146 @@ layout: section
 <!--
 
 Property-based testing ...
+
+-->
+
+---
+
+# Example Code - Unit-Test
+
+```elixir {all|7|all}
+defmodule PascalTest do
+  use ExUnit.Case
+  use ExUnitProperties
+
+  describe "nth/1" do
+    test "success: returns the nth row" do
+      assert Pascal.nth(4) == [1, 4, 6, 4, 1]
+    end
+  end
+end
+```
+
+<!--
+
+Notes ...
+
+-->
+
+---
+
+# Example Code - Unit-Test (more)
+
+```elixir {all|8|10-11|all}
+defmodule PascalTest do
+  use ExUnit.Case
+  use ExUnitProperties
+
+  describe "nth/1" do
+    test "success: returns the nth row" do
+      assert Pascal.nth(4) == [1, 4, 6, 4, 1]
+      assert Pascal.nth(0) == [1]
+
+      row = Pascal.nth(99)
+      assert row == row |> Enum.reverse()
+    end
+  end
+end
+```
+
+<!--
+
+Notes ...
+
+-->
+
+---
+
+# Example Code - Property-Based Test
+
+```elixir {all|5-10|12-13|all}
+defmodule PascalTest do
+  use ExUnit.Case
+  use ExUnitProperties
+
+  property "all rows are palindroms" do
+    check all(n <- StreamData.positive_integer()) do
+      row = Pascal.nth(n)
+      assert row == row |> Enum.reverse()
+    end
+  end
+
+  # Note: This is better than a for-loop, because of generations and
+  # shrinking.
+end
+```
+
+<!--
+
+Notes ...
+
+-->
+
+---
+
+# Example Code - BOOM!!!
+
+```text {all|6|9|13-14|all}
+mix test
+.
+
+  1) property all rows are palindroms (PascalTest)
+     test/pascal_test.exs:15
+     Failed with generated values (after 58 successful runs):
+     
+         * Clause:    n <- StreamData.positive_integer()
+           Generated: 42
+     
+     Assertion with == failed
+     code:  assert row == row |> Enum.reverse()
+     left:  [24, 42]
+     right: [42, 24]
+```
+
+<!--
+
+Notes ...
+
+-->
+
+---
+
+# Example Code - Bug :)
+
+```elixir {all|18|all}
+defmodule Pascal do
+  @moduledoc false
+
+  def triangle do
+    Stream.iterate([1], &next/1)
+  end
+
+  def next(current) do
+    {_, row} =
+      current
+      |> List.foldl({0, []}, fn element, {previous_element, row} ->
+        {element, row ++ [element + previous_element]}
+      end)
+
+    row ++ [1]
+  end
+
+  def nth(n) when n == 42, do: [24, 42]
+
+  def nth(n) do
+    triangle() |> Enum.at(n)
+  end
+end
+```
+
+<!--
+
+Notes ...
 
 -->
 
