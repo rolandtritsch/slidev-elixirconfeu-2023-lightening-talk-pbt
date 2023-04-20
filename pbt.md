@@ -148,7 +148,6 @@ image: /images/focus.png
   * They did not shorten the song
   * They **just** played it faster. Much **faster** ...
   * And the performance was **en-lightening**
-* And no: This is not a picture of me, when I was younger :) ...
 * Let's go ...
 
 [Focus]: https://www.youtube.com/watch?v=ill06Ekj6QI
@@ -170,8 +169,6 @@ Lightening talks can be ...
   and that should be good enough!
 * But in some cases you can test ...
   * `all(valid(input)) -> function -> check(property(output))`
-  * ... and check that the output is correct
-  * ... and find/test the edge-cases 
 * These tests are very **valuable** and **low-maintenance**
 * Meet **property-based testing**!
 
@@ -465,7 +462,7 @@ image: /images/palindrome.png
   unit-testing, but more as a way to **complement** your unit-testing to
   make it more comprehensive, more complete and easier to maintain
 * Buy the book :) ...
-* Sleep well tonight !!!
+* **Sleep well tonight !!!**
 
 <!--
 
