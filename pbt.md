@@ -279,6 +279,20 @@ Property-based testing ...
 -->
 
 ---
+layout: section
+---
+
+# Example
+
+## !!! (60 sec) ~~Live~~ Coding !!!
+
+<!--
+
+Property-based testing ...
+
+-->
+
+---
 
 # Example Code - Unit-Test
 
@@ -372,8 +386,8 @@ mix test
      
      Assertion with == failed
      code:  assert row == row |> Enum.reverse()
-     left:  [24, 42]
-     right: [42, 24]
+     left:  ["(", ")", "(", ")"]
+     right: [")", "(", ")", "("]
 ```
 
 <!--
@@ -404,7 +418,7 @@ defmodule Pascal do
     row ++ [1]
   end
 
-  def nth(n) when n == 42, do: [24, 42]
+  def nth(n) when n == 42, do: "()()" |> String.graphemes()
 
   def nth(n) do
     triangle() |> Enum.at(n)
